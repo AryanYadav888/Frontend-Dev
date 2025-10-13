@@ -1,0 +1,270 @@
+# 				**Web Dev Assignment-1**     
+
+
+
+##### **1. Explain the difference between frontend, backend, and full-stack development with suitable real-world examples.**
+
+
+
+* ***Frontend Development (Client-Side):***
+
+It deals with everything users see and interact with on a website — layout, colors, buttons, and animations.
+
+Technologies: HTML, CSS, JavaScript, React, Angular
+
+Example: The home page design and product grid on Amazon.
+
+
+
+* ***Backend Development (Server-Side):***
+
+It handles the logic, database, and server communication that run behind the scenes.
+
+Technologies: Java, Python, Node.js, PHP, MySQL
+
+Example: When you log into Facebook, the backend verifies your credentials and fetches your data.
+
+
+
+* ***Full-Stack Development:***
+
+It involves both frontend and backend development. A full-stack developer builds the entire web app — from UI to database.
+
+Example: A developer who builds both the UI and server logic for a food delivery app.
+
+
+
+
+
+##### **2. Create a simple diagram showing how the client-server model works in web architecture.**
+
+
+
+   **+------------------+**
+
+   **|     Client       |**
+
+   **| (Web Browser)    |**
+
+   **+--------+---------+**
+
+            **|**
+
+     **HTTP Request**
+
+            **|**
+
+            **v**
+
+   **+--------+---------+**
+
+   **|     Web Server    |**
+
+   **| (Processes Data)  |**
+
+   **+--------+---------+**
+
+            **|**
+
+     **HTTP Response**
+
+            **|**
+
+            **v**
+
+   **+------------------+**
+
+   **|   Display Page   |**
+
+   **+------------------+**
+
+
+
+##### **3. Describe how a browser requests and displays a web page from a web server.**
+
+
+
+1. The user enters a URL (e.g., www.google.com).
+2. The browser sends an HTTP request to the web server.
+3. The DNS converts the domain name into an IP address.
+4. The web server finds the requested page and sends back HTML, CSS, and JS files.
+5. The browser renders these files — HTML for structure, CSS for design, and JS for interactivity — and displays the web page.
+
+
+
+
+
+##### **4. Identify and list the tools required to set up a web development environment. Explain the**
+
+##### **purpose of each.**
+
+
+
+| *\*\*Tool\*\**                      | \*\*Purpose\*\*                                                      |
+
+| ----------------------------- | ---------------------------------------------------------------- |
+
+| \*\*VS Code\*\*                   | Code editor for writing and debugging HTML, CSS, and JavaScript. |
+
+| \*\*Web Browser (Chrome/Edge)\*\* | Used to view and test web pages.                                 |
+
+| \*\*Node.js\*\*                   | Provides JavaScript runtime for backend or local testing.        |
+
+| \*\*Git \& GitHub\*\*              | Version control and code hosting.                                |
+
+| \*\*Live Server Extension\*\*     | Allows real-time preview of web pages during development.        |
+
+
+
+
+
+##### **5. Explain what a web server is and give examples of commonly used servers.**
+
+
+
+A Web Server is software or hardware that stores, processes, and delivers web pages to clients through HTTP/HTTPS.
+
+It receives requests from browsers and responds with the requested web pages or data**.**
+
+
+
+###### ***Examples of Common Web Servers:***
+
+* Apache HTTP Server
+* Nginx
+* Microsoft IIS
+* LiteSpeed
+* Node.js (Express server)
+
+
+
+##### **6. Define the roles of a frontend developer, backend developer, and database administrator**
+
+##### **in a project.**
+
+
+
+| \*\*Role\*\*                         | \*\*Responsibilities\*\*                                                    |
+
+| -------------------------------- | ----------------------------------------------------------------------- |
+
+| \*\*Frontend Developer\*\*           | Designs the UI, implements HTML/CSS/JS, and ensures responsive layouts. |
+
+| \*\*Backend Developer\*\*            | Handles databases, APIs, server logic, and authentication.              |
+
+| \*\*Database Administrator (DBA)\*\* | Manages database design, optimization, security, and backup.            |
+
+
+
+
+
+##### **7. Install VS Code and configure it for HTML, CSS, and JavaScript development. Take a screenshot of the setup.**
+
+
+
+
+
+\[Insert Screenshot of VS Code setup here]
+
+
+
+
+
+##### **8. Explain the difference between static and dynamic websites. Provide an example of each.**
+
+
+
+| \*\*Type\*\*            | \*\*Definition\*\*                                                                | \*\*Example\*\*                                |
+
+| ------------------- | ----------------------------------------------------------------------------- | ------------------------------------------ |
+
+| \*\*Static Website\*\*  | Displays fixed content. Every user sees the same page.                        | A personal portfolio or company info page. |
+
+| \*\*Dynamic Website\*\* | Displays data that changes depending on user interaction or database content. | Facebook, Amazon, or YouTube.              |
+
+
+
+
+
+##### **9. Research and list five web browsers. Explain how rendering engines differ between them.**
+
+
+
+**| \*\*Browser\*\*         | \*\*Rendering Engine\*\*   | \*\*Description\*\*                                  |**
+
+**| ------------------- | ---------------------- | ------------------------------------------------ |**
+
+**| \*\*Google Chrome\*\*   | Blink                  | Fast, supports latest web standards.             |**
+
+**| \*\*Mozilla Firefox\*\* | Gecko                  | Open-source, privacy-focused engine.             |**
+
+**| \*\*Microsoft Edge\*\*  | Blink (Chromium-based) | Efficient and compatible with Chrome extensions. |**
+
+**| \*\*Apple Safari\*\*    | WebKit                 | Optimized for macOS and iOS devices.             |**
+
+**| \*\*Opera\*\*           | Blink                  | Lightweight and includes a built-in VPN.         |**
+
+
+
+
+
+##### **10. Draw a labeled diagram showing the basic web architecture flow — client, server,database, and APIs.**
+
+
+
+
+
+   **+-----------------+**
+
+   **|     Client      |**
+
+   **| (Web Browser)   |**
+
+   **+--------+--------+**
+
+            **|**
+
+      **HTTP Request**
+
+            **|**
+
+            **v**
+
+   **+--------+--------+**
+
+   **|      Server     |**
+
+   **| (Backend Code)  |**
+
+   **+--------+--------+**
+
+            **|**
+
+        **Query/Response**
+
+            **|**
+
+            **v**
+
+   **+--------+--------+**
+
+   **|     Database     |**
+
+   **| (Stores Data)    |**
+
+   **+--------+--------+**
+
+            **^**
+
+            **|**
+
+         **API Layer**
+
+     **(Connects Client,**
+
+     **Server, Database)**
+
+
+
+
+
