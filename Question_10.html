@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Selection</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        select { padding: 5px; width: 250px; margin-top: 5px; }
+        p { margin-top: 20px; font-size: 1.1em; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Choose Your Travel Preferences</h1>
+
+    <!-- Country Dropdown -->
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+        <option value="india" selected>India</option>
+        <option value="france">France</option>
+        <option value="japan">Japan</option>
+        <option value="bali">Bali</option>
+    </select>
+
+    <!-- State Dropdown -->
+    <label for="state">State:</label>
+    <select id="state" name="state">
+        <option value="maharashtra">Maharashtra</option>
+        <option value="delhi" selected>Delhi</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+    </select>
+
+    <!-- City Dropdown -->
+    <label for="city">City:</label>
+    <select id="city" name="city">
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi" selected>Delhi</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="chennai">Chennai</option>
+    </select>
+
+    <!-- Favorite Tourist Place Dropdown -->
+    <label for="place">Favorite Tourist Place:</label>
+    <select id="place" name="place">
+        <option value="tajmahal">Taj Mahal</option>
+        <option value="qutubminar" selected>Qutub Minar</option>
+        <option value="gateway">Gateway of India</option>
+        <option value="indiaGate">India Gate</option>
+    </select>
+
+    <!-- Summary Paragraph -->
+    <p>
+        Your travel preferences: Country - <strong>India</strong>, State - <strong>Delhi</strong>, City - <strong>Delhi</strong>, Favorite Tourist Place - <strong>Qutub Minar</strong>.
+    </p>
+
+</body>
+</html>
