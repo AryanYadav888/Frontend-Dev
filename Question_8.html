@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        table { border-collapse: collapse; width: 60%; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        caption { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- School Name -->
+    <h1>XYZ Senior Secondary School</h1>
+
+    <!-- Student Marks Table -->
+    <table title="Student marks for 5 subjects">
+        <caption>Student Report</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Student Name</th>
+                <th colspan="5">Subjects</th>
+            </tr>
+            <tr>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+                <th>History</th>
+                <th>Computer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr title="Marks obtained by Aryan Yadav">
+                <td>Aryan Yadav</td>
+                <td>85</td>
+                <td>90</td>
+                <td>88</td>
+                <td>82</td>
+                <td>95</td>
+            </tr>
+            <tr title="Marks obtained by Priya Sharma">
+                <td>Priya Sharma</td>
+                <td>78</td>
+                <td>85</td>
+                <td>92</td>
+                <td>80</td>
+                <td>88</td>
+            </tr>
+            <!-- Total and Percentage row -->
+            <tr>
+                <td colspan="5" style="text-align: right; font-weight: bold;">Total Marks:</td>
+                <td>440</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: right; font-weight: bold;">Percentage:</td>
+                <td>88%</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
