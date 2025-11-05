@@ -1,0 +1,102 @@
+/* ===== Basic Page Styling ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f5fa;
+  color: #333;
+}
+
+header, footer {
+  text-align: center;
+  background-color: #0066cc;
+  color: white;
+  padding: 1rem 0;
+}
+
+footer {
+  background-color: #333;
+}
+
+/* ===== Centering the Form ===== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* ===== Form Container ===== */
+.form-section {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 350px;
+}
+
+h2 {
+  text-align: center;
+  color: #0066cc;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Form Elements ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Ensures uniform spacing */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: 2px solid transparent; /* Default outline hidden */
+  transition: all 0.3s ease;
+}
+
+/* ===== Different Outline Styles ===== */
+input[type="text"] {
+  outline-style: dashed;
+  outline-offset: 3px;
+}
+
+input[type="email"] {
+  outline-style: double;
+  outline-offset: 4px;
+}
+
+textarea {
+  outline-style: solid;
+  outline-offset: 6px;
+}
+
+/* ===== Focus States ===== */
+input:focus, textarea:focus {
+  outline-color: #0066cc;
+  outline-offset: 8px;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+  border-color: #0066cc;
+}
+
+/* ===== Button Styling ===== */
+button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004b99;
+}
