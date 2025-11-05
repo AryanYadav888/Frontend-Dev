@@ -1,0 +1,78 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+}
+
+/* Header and Footer */
+header {
+  background-color: #007acc;
+  color: white;
+  padding: 1rem 0;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 0;
+  margin-top: 2rem;
+}
+
+/* Flexbox container centers content vertically and horizontally */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;  /* allows wrapping for small screens */
+  gap: 20px;
+  min-height: 80vh;  /* centers boxes in viewport */
+}
+
+/* Common box styling */
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Box 1: Fixed height & width (px) */
+.box1 {
+  background-color: #e74c3c;
+  width: 200px;
+  height: 150px;
+}
+
+/* Box 2: Relative sizing using % and vh */
+.box2 {
+  background-color: #27ae60;
+  width: 30%;
+  height: 30vh;
+}
+
+/* Box 3: Using em, min/max, and overflow */
+.box3 {
+  background-color: #8e44ad;
+  width: 20em;         /* relative to font size */
+  min-height: 100px;   /* ensures minimum height */
+  max-width: 300px;    /* limits maximum width */
+  overflow: auto;      /* scrolls if content overflows */
+  font-size: 1em;
+}
+
+/* Add subtle hover effect */
+.box:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
