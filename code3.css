@@ -1,0 +1,69 @@
+/* ===== General Page Styling ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* ===== Fixed Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+/* ===== Fixed Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.7rem 0;
+  z-index: 10;
+}
+
+/* ===== Section Styling ===== */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ===== Linear Gradient Section ===== */
+.linear-section {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+
+/* ===== Radial Gradient Section ===== */
+.radial-section {
+  background: radial-gradient(circle at center, #1e3c72, #2a5298);
+  background-attachment: fixed; /* Creates parallax-like effect */
+}
+
+/* ===== Text Styling ===== */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Prevent text from hiding behind header/footer */
+section:first-of-type {
+  margin-top: 60px;
+}
+section:last-of-type {
+  margin-bottom: 60px;
+}
