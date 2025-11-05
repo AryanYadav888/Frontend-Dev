@@ -1,0 +1,110 @@
+/* ===== General Page Styling ===== */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+
+/* ===== Header and Footer ===== */
+header {
+  background-color: #007acc;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0.7rem 0;
+  margin-top: 2rem;
+}
+
+/* ===== Article Section ===== */
+article {
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Headings ===== */
+h2 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #007acc;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== Inline Text Elements ===== */
+
+/* <mark> element */
+mark {
+  background-color: #ffe47a;
+  color: #000;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* <strong> element */
+strong {
+  color: #d35400;
+  font-weight: 700;
+}
+
+/* <em> element */
+em {
+  color: #8e44ad;
+  font-style: italic;
+}
+
+/* ===== Pseudo-Elements ===== */
+
+/* ::first-letter - emphasize the first letter of the first paragraph */
+article p:first-of-type::first-letter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007acc;
+  float: left;
+  margin-right: 8px;
+  line-height: 1;
+}
+
+/* ::first-line - style the first line of every paragraph */
+article p::first-line {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* ===== Font Variety Demonstration ===== */
+article p:nth-of-type(2) {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+}
+
+article p:nth-of-type(3) {
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ===== Responsive Text ===== */
+@media (max-width: 600px) {
+  article {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
