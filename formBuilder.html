@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="formContainer"></div>
+
+<script>
+class FormBuilder {
+  constructor(fields) {
+    this.fields = fields;
+  }
+
+  renderForm() {
+    let html = "<form id='dynamicForm'>";
+    this.fields.forEach(f => {
+      html += `<label>${f.label}</label>
+               <input type="${f.type}" id="${f.label.replace(/\s+/g,'')}" /><br><br>`;
+    });
+    html += `<button type="button" onclick="getData()">Submit</button></form>`;
+    document.getElementById("formContainer").innerHTML = html;
+  }
+
+  getFormData() {
+    let data = {};
+    this.fields.forEach(f => {
+      let id = f.label.replace(/\s+/g,'');
+      data[f.label] = document.getElementById(id).value;
+    });
+    return data;
+  }
+}
+
+let fields = [
+  { type: "text", label: "Username" },
+  { type: "email", label: "Email" },
+  { type: "password", label: "Password" }
+];
+
+let form = new FormBuilder(fields);
+form.renderForm();
+
+function getData() {
+  console.log(form.getFormData());
+}
+</script>
+
+</body>
+</html>
