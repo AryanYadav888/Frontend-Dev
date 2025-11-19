@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validator</title>
+</head>
+<body>
+
+  <h2>Student Form</h2>
+
+  <label>Name:</label>
+  <input type="text" id="name"><br>
+  <p id="nameError" style="color:red"></p>
+
+  <label>Email:</label>
+  <input type="text" id="email"><br>
+  <p id="emailError" style="color:red"></p>
+
+  <label>Phone:</label>
+  <input type="text" id="phone"><br>
+  <p id="phoneError" style="color:red"></p>
+
+  <label>Password:</label>
+  <input type="password" id="password"><br>
+  <p id="passwordError" style="color:red"></p>
+
+  <button onclick="validateForm()">Submit</button>
+
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let phone = document.getElementById("phone");
+      let password = document.getElementById("password");
+
+      let nameError = document.getElementById("nameError");
+      let emailError = document.getElementById("emailError");
+      let phoneError = document.getElementById("phoneError");
+      let passwordError = document.getElementById("passwordError");
+
+      let namePattern = /^[A-Za-z ]+$/;
+      let emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      let phonePattern = /^[0-9]{10}$/;
+      let passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+
+      // NAME
+      if (!namePattern.test(name.value)) {
+        name.style.border = "2px solid red";
+        nameError.innerText = "Name must contain only alphabets!";
+      } else {
+        name.style.border = "2px solid green";
+        nameError.innerText = "";
+      }
+
+      // EMAIL
+      if (!emailPattern.test(email.value)) {
+        email.style.border = "2px solid red";
+        emailError.innerText = "Enter a valid email!";
+      } else {
+        email.style.border = "2px solid green";
+        emailError.innerText = "";
+      }
+
+      // PHONE
+      if (!phonePattern.test(phone.value)) {
+        phone.style.border = "2px solid red";
+        phoneError.innerText = "Phone must be exactly 10 digits!";
+      } else {
+        phone.style.border = "2px solid green";
+        phoneError.innerText = "";
+      }
+
+      // PASSWORD
+      if (!passwordPattern.test(password.value)) {
+        password.style.border = "2px solid red";
+        passwordError.innerText = "Password must contain 1 uppercase, 1 number & 1 special char!";
+      } else {
+        password.style.border = "2px solid green";
+        passwordError.innerText = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
