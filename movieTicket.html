@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Movie Ticket Booking</h2>
+
+<label>Name:</label>
+<input type="text" id="name"><p id="nErr" style="color:red"></p>
+
+<label>Email:</label>
+<input type="text" id="email"><p id="eErr" style="color:red"></p>
+
+<label>Seats (1–10):</label>
+<input type="number" id="seats"><p id="sErr" style="color:red"></p>
+
+<button onclick="bookTicket()">Book Ticket</button>
+
+<h3 id="result"></h3>
+
+<script>
+function bookTicket() {
+  let name = document.getElementById("name");
+  let email = document.getElementById("email");
+  let seats = document.getElementById("seats");
+
+  let nErr = document.getElementById("nErr");
+  let eErr = document.getElementById("eErr");
+  let sErr = document.getElementById("sErr");
+
+  let namePat = /^[A-Za-z ]+$/;
+  let emailPat = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+  let valid = true;
+
+  if (!namePat.test(name.value)) {
+    nErr.innerText = "Name must contain only alphabets";
+    valid = false;
+  } else nErr.innerText = "";
+
+  if (!emailPat.test(email.value)) {
+    eErr.innerText = "Invalid email format";
+    valid = false;
+  } else eErr.innerText = "";
+
+  if (seats.value < 1 || seats.value > 10) {
+    sErr.innerText = "Seats must be between 1 and 10";
+    valid = false;
+  } else sErr.innerText = "";
+
+  if (valid) {
+    let ticket = {
+      name: name.value,
+      email: email.value,
+      seats: seats.value
+    };
+
+    document.getElementById("result").innerText =
+      `Booking Confirmed!\nName: ${ticket.name}\nEmail: ${ticket.email}\nSeats: ${ticket.seats}`;
+  }
+}
+</script>
+
+</body>
+</html>
