@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Login Form</h2>
+
+<label>Username:</label>
+<input type="text" id="user"><p id="uErr" style="color:red"></p>
+
+<label>Password:</label>
+<input type="password" id="pass"><p id="pErr" style="color:red"></p>
+
+<button onclick="validateLogin()">Login</button>
+
+<h3 id="result"></h3>
+
+<script>
+function validateLogin() {
+  let user = document.getElementById("user");
+  let pass = document.getElementById("pass");
+  let uErr = document.getElementById("uErr");
+  let pErr = document.getElementById("pErr");
+  let result = document.getElementById("result");
+
+  let userPat = /^.{5,}$/;
+  let passPat = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+  let valid = true;
+
+  if (!userPat.test(user.value)) {
+    uErr.innerText = "Username must be at least 5 characters";
+    valid = false;
+  } else uErr.innerText = "";
+
+  if (!passPat.test(pass.value)) {
+    pErr.innerText = "Password must have 8 chars, uppercase, lowercase, number, special";
+    valid = false;
+  } else pErr.innerText = "";
+
+  if (valid) {
+    result.style.color = "green";
+    result.innerText = "Login Successful!";
+  } else {
+    result.style.color = "red";
+    result.innerText = "";
+  }
+}
+</script>
+
+</body>
+</html>
