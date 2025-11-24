@@ -1,0 +1,44 @@
+const btn = document.getElementById("dropdownBtn");
+const menu = document.getElementById("dropdownMenu");
+
+// Toggle dropdown menu
+btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Preven<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Custom Dropdown (No &lt;select&gt; Tag)</h2>
+
+    <div class="dropdown">
+        <button id="dropdownBtn">Select Option</button>
+
+        <div id="dropdownMenu" class="menu">
+            <div class="option">Option 1</div>
+            <div class="option">Option 2</div>
+            <div class="option">Option 3</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>t auto-close when clicking button
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+// Option click
+document.querySelectorAll(".option").forEach(option => {
+    option.addEventListener("click", (e) => {
+        btn.textContent = e.target.textContent;  // update button text
+        menu.style.display = "none";             // close after select
+    });
+});
+
+// Clicking outside → closes dropdown (CAPTURING PHASE)
+document.addEventListener("click", () => {
+    menu.style.display = "none";
+}, true);  // TRUE = capturing phase
