@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Status Dashboard</title>
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .active { color: green; font-weight: bold; }
+        .inactive { color: red; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+
+<h2>Employee Status Dashboard</h2>
+
+<table id="empTable">
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Toggle</th>
+    </tr>
+</table>
+
+<p id="error" style="color:red; display:none;"></p>
+
+<script>
+// FETCH EMPLOYEES (XMLHttpRequest)
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "http://localhost:3002/employees");
+xhr.onload = function() {
+    const data = JSON.parse(xhr.responseText);
+    loadEmployees(data);
+};
+xhr.send();
+
+// RENDER EMPLOYEES
+function loadEmployees(employees) {
+    const table = document.getElementById("empTable");
+
+    employees.forEach(emp => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${emp.name}</td>
+            <td class="status ${emp.status}">${emp.status}</td>
+            <td>
+                <button onclick="toggleStatus(${emp.id}, this)">Toggle</button>
+            </td>
+        `;
+
+        table.appendChild(row);
+    });
+}
+
+// TOGGLE STATUS
+function toggleStatus(id, btn) {
+    const statusCell = btn.parentElement.parentElement.querySelector(".status");
+    const oldStatus = statusCell.innerText;
+
+    // Toggle immediately in UI
+    const newStatus = oldStatus === "active" ? "inactive" : "active";
+    statusCell.innerText = newStatus;
+    statusCell.className = `status ${newStatus}`;
+
+    // Send PATCH request
+    const xhrPatch = new XMLHttpRequest();
+    xhrPatch.open("PATCH", "http://localhost:3002/employees/" + id);
+    xhrPatch.setRequestHeader("Content-Type", "application/json");
+    
+    xhrPatch.onload = function() {
+        if (xhrPatch.status >= 200 && xhrPatch.status < 300) {
+            console.log("Status updated successfully");
+        } else {
+            revertChange();
+        }
+    };
+
+    xhrPatch.onerror = function() {
+        revertChange();
+    };
+
+    xhrPatch.send(JSON.stringify({ status: newStatus }));
+
+    // Revert if error
+    function revertChange() {
+        statusCell.innerText = oldStatus;
+        statusCell.className = `status ${oldStatus}`;
+        document.getElementById("error").innerText = "Error: Failed to update status.";
+        document.getElementById("error").style.display = "block";
+        setTimeout(() => document.getElementById("error").style.display = "none", 3000);
+    }
+}
+</script>
+
+</body>
+</html>
