@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Q5.js" defer></script>
+</head>
+
+<body>
+
+<h2 class="dept">Sales Department</h2>
+<ul class="team">
+    <li class="manager">Manager A
+        <ul>
+            <li class="emp">Emp 1 <span class="info"> | 123456</span></li>
+            <li class="emp">Emp 2 <span class="info"> | 987654</span></li>
+        </ul>
+    </li>
+</ul>
+
+<h2 class="dept">Tech Department</h2>
+<ul class="team">
+    <li class="manager">Manager B
+        <ul>
+            <li class="emp">Emp 3 <span class="info"> | 555111</span></li>
+            <li class="emp">Emp 4 <span class="info"> | 444222</span></li>
+        </ul>
+    </li>
+</ul>
+
+<button id="randomBtn">Highlight Random Employee + Siblings</button>
+<button id="toggleTeam">Collapse/Expand Teams</button>
+
+<style>
+    .info { display: none; }
+    .highlight { background: yellow; }
+</style>
+
+</body>
+</html>
