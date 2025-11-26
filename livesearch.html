@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #results div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        #loading {
+            display: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Real-Time Live Search</h2>
+
+<input type="text" id="searchBox" placeholder="Search products..." />
+
+<p id="loading">Loading...</p>
+
+<div id="results"></div>
+
+<script>
+$(document).ready(function(){
+
+    $("#searchBox").on("keyup", function(){
+        let query = $(this).val();
+
+        $("#loading").show(); // Show loading
+
+        $.ajax({
+            url: "http://localhost:3001/products?q=" + query,
+            method: "GET",
+            success: function(data){
+                $("#loading").hide(); // Hide loading
+                $("#results").empty();
+
+                if (data.length === 0) {
+                    $("#results").html("<p>No products found</p>");
+                    return;
+                }
+
+                data.forEach(item => {
+                    $("#results").append(`
+                        <div>
+                            <img src="${item.image}" width="80" />
+                            <div>
+                                <h4>${item.name}</h4>
+                                <p>Price: ₹${item.price}</p>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>
