@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        #tasks {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Task Manager</h2>
+
+<select id="filter">
+    <option value="">All Tasks</option>
+    <option value="Low">Low Priority</option>
+    <option value="Medium">Medium Priority</option>
+    <option value="High">High Priority</option>
+    <option value="completed">Completed</option>
+</select>
+
+<div id="tasks"></div>
+
+<script>
+$(document).ready(function() {
+
+    // Load tasks initially
+    loadTasks();
+
+    // Reload tasks on filter change
+    $("#filter").on("change", function() {
+        loadTasks();
+    });
+
+    function loadTasks() {
+        let filter = $("#filter").val();
+        let url = "http://localhost:3003/tasks";
+
+        // Apply filtering using query params
+        if (filter === "completed") {
+            url += "?completed=true";
+        } else if (filter) {
+            url += "?priority=" + filter;
+        }
+
+        $.ajax({
+            url: url,
+            method: "GET",
+            success: function(data) {
+                $("#tasks").empty();
+
+                data.forEach(task => {
+                    $("#tasks").append(`
+                        <div class="task">
+                            <input type="checkbox" ${task.completed ? "checked" : ""} 
+                                   onclick="toggleTask(${task.id}, ${task.completed})">
+                            <span class="${task.completed ? "completed" : ""}">
+                                ${task.title} (${task.priority})
+                            </span>
+                        </div>
+                    `);
+                });
+            }
+        });
+    }
+});
+
+function toggleTask(id, currentStatus) {
+    const newStatus = !currentStatus;
+
+    $.ajax({
+        url: "http://localhost:3003/tasks/" + id,
+        method: "PATCH",
+        contentType: "application/json",
+        data: JSON.stringify({ completed: newStatus }),
+        success: function() {
+            $("#filter").trigger("change");
+        }
+    });
+}
+</script>
+
+</body>
+</html>
