@@ -1,0 +1,59 @@
+~~~{"id":"51005","variant":"standard"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2 Product Highlight</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="Q2.js" defer></script>
+
+    <style>
+        .product { padding: 10px; margin: 10px; border: 1px solid #ccc; width: 200px; }
+        .highlight { background: #ffeb99; }
+        .selected { color: red; }
+        [data-discount="yes"] { border-color: green; }
+        .details { display: none; font-size: 14px; }
+    </style>
+</head>
+
+<body>
+
+<main>
+    <section id="products">
+
+        <div class="product" data-stock="yes" data-discount="yes">
+            <h3>Product 1</h3>
+            <p class="details">Extra details for Product 1</p>
+            ★
+        </div>
+
+        <div class="product" data-stock="no">
+            <h3>Product 2</h3>
+            <p class="details">Extra details for Product 2</p>
+            ★
+        </div>
+
+        <div class="product" data-stock="yes">
+            <h3>Product 3</h3>
+            <p class="details">Extra details for Product 3</p>
+            ★
+        </div>
+
+        <div class="product" data-stock="yes" data-discount="yes">
+            <h3>Product 4</h3>
+            <p class="details">Extra details for Product 4</p>
+            ★
+        </div>
+
+        <div class="product" data-stock="no">
+            <h3>Product 5</h3>
+            <p class="details">Extra details for Product 5</p>
+            ★
+        </div>
+
+    </section>
+</main>
+
+</body>
+</html>
