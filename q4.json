@@ -1,0 +1,25 @@
+{
+  "users": [
+    { "id": 1, "name": "Aman" },
+    { "id": 2, "name": "Riya" },
+    { "id": 3, "name": "Simran" },
+    { "id": 4, "name": "Kabir" },
+    { "id": 5, "name": "Rohan" }
+  ],
+
+  "orders": [
+    { "id": 1, "userId": 1, "amount": 1200 },
+    { "id": 2, "userId": 2, "amount": 600 },
+    { "id": 3, "userId": 3, "amount": 900 },
+    { "id": 4, "userId": 4, "amount": 300 },
+    { "id": 5, "userId": 5, "amount": 1500 }
+  ],
+
+  "products": [
+    { "id": 1, "name": "Mouse" },
+    { "id": 2, "name": "Keyboard" },
+    { "id": 3, "name": "Charger" },
+    { "id": 4, "name": "Headphones" },
+    { "id": 5, "name": "Laptop Stand" }
+  ]
+}
