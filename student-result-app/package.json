@@ -1,0 +1,20 @@
+{
+  "name": "student-result-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "json-server": "json-server --watch db.json --port 3000",
+    "backend": "npm run json-server",
+    "frontend": "react-scripts start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1",
+    "concurrently": "^7.6.0"
+  }
+}
